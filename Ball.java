@@ -1,19 +1,24 @@
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 
 /**
  * Write a description of class Ball here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * The ball class places the ball in the middle of the world,
+ * checks if the ball is colliding with an object,
+ * and sets the velocity of the ball.
+ * 
+ * @author (Aric Johnson) 
+ * @version (Dec, 2nd, 2018)
  */
 public class Ball extends Actor
 {
     //TODO (44): Declare an integer instance constant called SIZE that is initialized to 20
-    
+    private final int SIZE = 20;
     
     //TODO (45): Declare a static integer instance variable (private static int) called velocity initialized to 0
-    
+    private static int velocity = 0;
 
     /**
      * TODO (46): Declare a default constructor for the Ball class
@@ -31,6 +36,23 @@ public class Ball extends Actor
      * TODO (51): Turn the ball a random number of degrees between 0 and 360 (360 not included)
      */
     
+    /**
+     * Ball vreates the ball and fills it with a color of white.
+     * It also makes the ball fly in a random dirrection when 
+     * the game starts
+     * 
+     * @param None There are no parameters
+     * @return Nothing is being returned
+     * 
+     */
+    public Ball()
+    {
+        GreenfootImage ballImage = new GreenfootImage (SIZE, SIZE);
+        ballImage.setColor (Color.WHITE);
+        ballImage.fillOval (0, 0, SIZE, SIZE);
+        setImage (ballImage);
+        turn (Greenfoot.getRandomNumber(360) - 1);
+    }
 
     /**
      * Act - do whatever the Ball wants to do. This method is called whenever
@@ -40,15 +62,17 @@ public class Ball extends Actor
     {
         // Add your action code here.
         //TODO (82): Declare a local PlayField variable called field that is initialized to store a reference to the PlayField object
-        
+        PlayField field = (PlayField) getWorld();
 
         //TODO (83): If the game has started (PlayField has a method for checking this)...
-        
+        if (field.getStarted() == true)
+        {
             //TODO (84): Move the ball at a speed of velocity
-            
+            move(velocity);
             
             //TODO (107): Use a method to check if the ball has collided with something
-            
+            checkCollition();
+        }
     }
 
     /**
@@ -101,6 +125,51 @@ public class Ball extends Actor
      *      TODO (106): Reset the world by using the reset method of world
      */
     
+    /**
+     * checkCollition checks if the ball is colliding with an object.
+     * It also makes the ball go in a random direction when the game starts/resets.
+     * 
+     * @param None There are no parameters
+     * @return Nothing is being returned
+     */
+    private void checkCollition()
+    {
+        Actor hitting = getOneIntersectingObject(Paddle.class);
+        PlayField world = (PlayField) getWorld();
+        Score getPoint;
+        
+        if (hitting != null)
+        {
+            velocity = -5;
+            setRotation(- getRotation());
+            move(velocity);
+        }
+        
+        if (getY() <= 10)
+        {
+            setRotation(- getRotation());
+        }
+        
+        if (getY() >= 590)
+        {
+            setRotation(- getRotation());
+        }
+        
+        if (getX() <= 10)
+        {
+             getWorld().removeObject (this);
+             getPoint = (Score)world.getObjects(Score.class).get(1);
+             getPoint.countScore();
+             world.reset();
+        }
+        else if (getX() >= 790)
+        {
+             getWorld().removeObject (this);
+             getPoint = (Score)world.getObjects(Score.class).get(0);
+             getPoint.countScore();
+             world.reset();
+        }
+    }
 
     /**
      * TODO (52): Declare a public method called setVelocity that does not
@@ -109,4 +178,14 @@ public class Ball extends Actor
      * TODO (53): Inside the method, set velocity variable to the v parameter
      */
     
+    /**
+     * setVelocity sets the velocity variable to the integer parameter v
+     * 
+     * @param interger v is a parameter that represents velocity
+     * @return Nothing is being returned
+     */
+    public void setVelocity(int v)
+    {
+        velocity = v;
+    }
 }

@@ -1,7 +1,13 @@
 #BlueJ class context
 comment0.target=Paddle
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Paddle\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Paddle\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-numComments=2
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Paddle\ here.\r\n\ \r\n\ The\ Paddle\ class\ creates\ the\ paddles\ and\ places\ them\ in\ the\ world\r\n\ on\ their\ corresponding\ sides\ (i.e.\ player\ one's\ side\ or\ player\ two's\ side),\r\n\ it\ also\ checks\ for\ the\ key\ presses\ of\ the\ upKey,\ downKey,\ 'w',\ and\ 's'\ in\r\n\ order\ to\ move\ up\ or\ down.\r\n\ \r\n\ @author\ (Aric\ Johnson)\ \r\n\ @version\ (Dec,\ 2nd,\ 2018)\r\n
+comment1.params=isLeft
+comment1.target=Paddle(boolean)
+comment1.text=\r\n\ Paddle\ is\ a\ constructor\ that\ makes\ the\ paddles\ be\ able\r\n\ to\ move\ up\ and\ down\ with\ their\ corresponding\ key\ presses.\r\n\ If\ the\ paddle\ is\ on\ the\ left\ side\ of\ the\ world\ the\ keys\r\n\ you\ need\ to\ press\ are\ 'w'\ and\ 's'\ and\ if\ the\ paddle\ is\ \r\n\ on\ the\ right\ side,\ the\ keys\ you\ need\ to\ press\ are\ 'upKey'\ and\ 'downKey'\r\n\ \r\n\ @param\ The\ isLeft\ boolean\ is\ true\ if\ the\ paddle\ is\ on\ the\ left.\r\n\ \ In\ this\ case\ it\ is\ used\ to\ apply\ certain\ key\ presses\ to\ the\r\n\ \ paddle\ on\ the\ left\ and\ right.\r\n\ \ \r\n\ \ @return\ This\ constructor\ is\ returning\ the\ Paddle\ class\r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Paddle\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment3.params=
+comment3.target=void\ checkKeyPress()
+comment3.text=\r\n\ checkKeyPresss\ checks\ if\ the\ upKey\ or\ downKey\ is\ pressed\r\n\ then\ moves\ the\ paddle\ in\ either\ direction\ by\ 4\ (up\ or\ down)\r\n\ \r\n\ @param\ None\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ returned\r\n
+numComments=4

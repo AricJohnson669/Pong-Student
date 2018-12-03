@@ -1,7 +1,19 @@
 #BlueJ class context
 comment0.target=Score
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Score\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Score\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-numComments=2
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Score\ here.\r\n\ \r\n\ The\ Score\ class\ pastes\ either\ of\ the\ players\ scores\r\n\ on\ the\ world\ and\ updaes\ them\ when\ each\ player\ gets\ \r\n\ a\ point.\r\n\ \r\n\ @author\ (Aric\ Johnson)\ \r\n\ @version\ (Dec,\ 2nd,\ 2018)\r\n
+comment1.params=onLeft
+comment1.target=Score(boolean)
+comment1.text=\r\n\ This\ constructor\ of\ the\ Score\ class\ initializes\ the\ player\ score\ to\ 0,\r\n\ initializes\ the\ isLeft\ boolean\ to\ onLeft,\ and\ desplays\ the\ score.\r\n\ \ \r\n\ @param\ The\ onLeft\ boolean\ determines\ if\ the\ player\ score\ is\ on\ the\ left\ side\ of\ the\ world\r\n\ @return\ The\ Score\ class\ is\ bein\ returned\r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Score\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment3.params=
+comment3.target=void\ displayScore()
+comment3.text=\r\n\ displayScore\ pastes\ the\ player\ 1\ score\ on\ the\ left\ side\ of\ the\r\n\ screen\ in\ the\ colour\ of\ red\ and\ it\ pastes\ the\ player\ 2\ score\ \r\n\ on\ the\ right\ side\ of\ the\ screen\ in\ the\ colour\ of\ blue.\r\n\ \r\n\ @param\ None\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ being\ returned\r\n
+comment4.params=
+comment4.target=void\ countScore()
+comment4.text=\r\n\ countScore\ adds\ to\ the\ score\ and\ checks\ if\ the\ \r\n\ player's\ score\ has\ been\ change\ from\ 0\ is\ true\r\n\ \r\n\ @param\ None\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ being\ returned\r\n
+comment5.params=
+comment5.target=int\ getScore()
+comment5.text=\r\n\ getScore\ returns\ the\ playerScore\ integer\r\n\ \r\n\ @param\ None\ There\ are\ no\ parameters\r\n\ @return\ The\ interger\ player\ score\ represents\ \r\n
+numComments=6
